@@ -15,8 +15,8 @@ class DealController extends Controller
      */
     public function index()
     {
-        $deals = Deal::paginate(10);
-        // dd($deals);
+        $deals = Deal::with('company')->with('status')->paginate(10);
+        //dd($deals);
         return view('deals.index', compact('deals'));
 
     }

@@ -2,15 +2,26 @@
 
 namespace App;
 use App\Contact;
+use App\Project;
+use App\Deal;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
     //
-    public function contacts()
+    public function comm_contacts()
     {
-        return $this->hasMany(Contact::class, 'id');
+        return $this->hasMany(Contact::class, 'id', 'comm_contact_id');
+    }
+    public function amm_contacts()
+    {
+        return $this->hasMany(Contact::class, 'id', 'amm_contact_id');
+
+    }
+    public function projects()
+    {
+        return $this->belongsTo(Project::class, 'company_id', 'id');
     }
 
     public function users()
@@ -18,10 +29,6 @@ class Company extends Model
         return $this->belongsToMany('App\User');
     }
 
-    public function projects()
-    {
-        return $this->belongsToMany('App\Project');
-    }
 
     public function tickets()
     {
@@ -30,6 +37,6 @@ class Company extends Model
 
     public function deals()
     {
-        return $this->hasMany('App\Deal');
+        return $this->hasMany(Deal::class, 'company_id', 'id');
     }
 }

@@ -30,8 +30,8 @@
         </td>
         <td>{{$deal->name}}</td>
         <td>{{$deal->descriptionl}}</td>
-        <td>{{$deal->status_id}}</td>
-        <td>{{$deal->company_id}}</td>
+        <td>{{$deal->status->name}}</td>
+        <td>{{$deal->company->business_name}}</td>
 
       </tr>
 

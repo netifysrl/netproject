@@ -3,20 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Status;
+use App\Company;
 
 class Project extends Model
 {
     //
 
-    public function status()
+    public function statuses()
     {
-        return $this->belongsTo('App\Status');
+        return $this->hasOne(Status::class, 'id', 'status_id');
     }
 
-    public function project()
-    {
-        return $this->belongsTo('App\Project');
-    }
 
     public function timeline()
     {
@@ -25,7 +23,7 @@ class Project extends Model
 
     public function companies()
     {
-        return $this->belongsToMany('App\Company');
+        return $this->hasOne(Company::class, 'id', 'company_id');
     }
 
     public function tickets()

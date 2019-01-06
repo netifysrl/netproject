@@ -24,14 +24,15 @@
               <tbody>
                   @foreach ($projects as $project)
 
+
                 <tr>
                   <td>
                       <button type="button" class="btn btn-sm btn-outline-success">{{$project->id}}</button>
                   </td>
                   <td>{{$project->name}}</td>
                   <td>{{$project->description}}</td>
-                  <td>{{$project->status_id}}</td>
-                  <td>{{$project->company_id}}</td>
+                  <td>{{$project->statuses->name}}</td>
+                  <td>{{$project->companies->business_name}}</td>
 
                 </tr>
 

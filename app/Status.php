@@ -2,14 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\Model;
+use App\Project;
+use App\Deal;
 class Status extends Model
 {
     //
     public function projects()
     {
-        return $this->hasMany('App\Project');
+        return $this->belongsTo(Project::class);
     }
 
     public function tasks()
@@ -29,7 +31,7 @@ class Status extends Model
 
     public function deals()
     {
-        return $this->hasMany('App\Deal');
+        return $this->hasOne(Deal::class, 'status_id', 'id');
     }
 
     public function updates()

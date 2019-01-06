@@ -23,6 +23,7 @@
     </thead>
     <tbody>
         @foreach ($companies as $company)
+            @foreach ($company->comm_contacts as $contact)
 
       <tr>
         <td>
@@ -31,10 +32,10 @@
         <td>{{$company->business_name}}</td>
         <td>{{$company->email}}</td>
         <td>{{$company->phone}}</td>
-        <td>{{$company->comm_contact_id}}</td>
+        <td>{{$contact->name}}</td>
 
       </tr>
-
+        @endforeach
       @endforeach
     </tbody>
   </table>
