@@ -12,15 +12,19 @@
 */
 Route::resource('companies', 'CompanyController');
 Route::resource('contacts', 'ContactController');
+Route::resource('projects', 'ProjectController');
+Route::resource('tasks', 'TaskController');
+Route::resource('deals', 'DealController');
+
+
+
 
 //test
 Route::get('/', function () {
-    return view('layouts.layout');
-});
-
-Route::get('/dashboard', function () {
     return view('dashboard.dash');
 });
+
+Route::get('/dashboard', 'DashboardController@home')->name('home');
 // End Test
 
 // Auto for Auth

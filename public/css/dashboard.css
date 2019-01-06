@@ -111,3 +111,28 @@ body {
   .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
     color: #ffa007;
 }
+
+/*
+   * ADMIN BS2 TEMPLATE  CSS
+   */
+
+   .page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.page-link:hover {
+    background-color: #ffdba0;
+
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #fdb847;
+    border-color: #ffa007;
+}

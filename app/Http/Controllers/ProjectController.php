@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project;
 
 class ProjectController extends Controller
 {
@@ -13,8 +14,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::paginate(10);
+        //dd($projects);
+        return view('projects.index', compact('projects'));
     }
+
 
     /**
      * Show the form for creating a new resource.

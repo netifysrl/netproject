@@ -2,10 +2,10 @@
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Companies</h1>
+            <h1 class="h2">Tasks</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-              <button type="button" class="btn btn-sm btn-outline-success">Add company</button>
+            {{--  <button type="button" class="btn btn-sm btn-outline-success">Add company</button> --}}
             </div>
           </div>
         </div>
@@ -15,30 +15,30 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Business name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Contact</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>User</th>
       </tr>
     </thead>
     <tbody>
-        @foreach ($companies as $company)
+        @foreach ($tasks as $task)
 
       <tr>
         <td>
-            <button type="button" class="btn btn-sm btn-outline-success">{{$company->id}}</button>
+            <button type="button" class="btn btn-sm btn-outline-success">{{$task->id}}</button>
         </td>
-        <td>{{$company->business_name}}</td>
-        <td>{{$company->email}}</td>
-        <td>{{$company->phone}}</td>
-        <td>{{$company->comm_contact_id}}</td>
+        <td>{{$task->name}}</td>
+        <td>{{$task->descriptionl}}</td>
+        <td>{{$task->status_id}}</td>
+        <td>{{$task->user_id}}</td>
 
       </tr>
 
       @endforeach
     </tbody>
   </table>
-  {{ $companies->links() }}
+  {{ $tasks->links() }}
 </div>
 
 

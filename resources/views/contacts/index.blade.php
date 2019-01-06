@@ -39,14 +39,15 @@
       @endforeach
     </tbody>
   </table>
+  {{ $contacts->links() }}
 </div>
 
 @endsection
 @section('pagescript')
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+ {{-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
         $(document).ready(function(){
             $('#contactsTable').dataTable();
         });
-</script>
+</script> --}}
 @stop
