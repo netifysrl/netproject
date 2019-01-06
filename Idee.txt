@@ -1,0 +1,150 @@
+Users -> Utenti che accedono al sistema di PM
+Contancts -> Contatti diretti deille aziende clienti
+Team -> Team che particeperà al progetto, composto da Users
+Company -> Aziende clienti o con il quale si ha una possibilità di business
+Deal -> Saranno le opportunità di business che  proveremo a sfruttare
+Project -> Saranno i progetti che il cliente Company commissionerà
+Task -> Saranno le azioni che dovranno essere compiute per eseguire i Project
+Tmeline -> La timeline del project
+Milestone -> Saranno dei punti importanti  nel processo di completamento del progietto
+Ticket -> Saranno le richieste di intervento sui Project in garanzia o in manutenzione
+Update_Ticket -> Conterra gli aggiornamenti del ticket  "Stati e descrizioni "
+Task_Worker -> COnterra gli abbinamenti degli user -> task
+Role -> contiene i ruoli assegnabili ai worker
+
+
+#Proprietà
+* User
+    * Id
+    * Name
+    * surname
+    * Email
+    * Phone
+    * Mobile Phone
+    * Street
+    * Number
+    * City
+    * Zip Code
+    * Country
+
+* Contact
+    * Id
+    * Name
+    * surname
+    * Email
+    * Phone
+    * Mobile Phone
+    * Company Role
+    * Street
+    * Number
+    * City
+    * Zip Code
+    * Countr
+
+* Team
+    * Id
+    * Name
+    * Description
+    * User_Id
+    * Role_Id
+
+
+* Company
+    * Id
+    * Business Name
+    * Email
+    * Phone
+    * Street
+    * Number
+    * City
+    * Zip Code
+    * Country
+    * Comm_Contact_id           " Internal commercial contacty"
+    * Tech_Contact_id           " Internal technical contact"
+    * Exec_Contact_id            " Internal Executive contact"
+    * Amm_Contact_id            " Internal amministrative contact"
+    * Ref_user_id               " Ours internal contact "
+
+* Deal
+    * Id
+    * Name
+    * Description
+    * Status_id
+    * Company_id
+    * Budget_ammount
+    * Start_contact
+    * End_Line
+
+
+* Project
+    * Id
+    * Name
+    * Description
+    * Status_id
+    * Team_id                   " Team for this work"
+    * Start_at
+    * End_at
+    * TimeLine_id
+
+* Tasks
+    * Id
+    * Name
+    * Description
+    * Status_id
+    * Timeline_id
+
+* Milestone
+    * Id
+    * Name
+    * Description
+    * Date
+    * Status_id
+    * Timeline_id
+
+* Ticket
+    * Id
+    * Name
+    * Description
+    * Status_id
+    * Update_id
+    * Opne_at
+    * Close_at
+    * Timeline_id
+
+* Timeline
+    * Id
+    * Name
+    * Description
+
+* Update_Ticket
+    * Id
+    * Ticket_id
+    * Name
+    * Description
+    * Status_id
+    * Created_at
+
+* Task_worker
+    * Id
+    * User_Id
+    * Task_Id
+    * Timeline_id
+
+* Status
+    * Id
+    * Name
+    * Description
+    * Img_url
+
+* Role
+    * id
+    * Name
+    * Description
+
+
+
+
+
+
+
+
