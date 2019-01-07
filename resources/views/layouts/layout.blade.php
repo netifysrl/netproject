@@ -35,9 +35,9 @@
 @endif
 </nav>
 
-@auth
+
     @include('partials.sidebar')
-@endauth
+
     @yield('content')
 
 
