@@ -20,11 +20,11 @@ Route::resource('deals', 'DealController');
 
 
 //test
-Route::get('/', function () {
-    return view('dashboard.dash');
-});
-
-Route::get('/dashboard', 'DashboardController@home')->name('home');
+//Route::get('/', function () {
+    //return view('dashboard.dash');
+//});
+Route::get('/', 'DashboardController@home');
+Route::get('/dashboard', 'DashboardController@home');
 // End Test
 
 // Auto for Auth

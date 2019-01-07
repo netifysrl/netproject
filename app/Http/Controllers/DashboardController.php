@@ -9,6 +9,18 @@ use App\Ticket;
 
 class DashboardController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function home()
     {
         $tot_projects = Project::count();

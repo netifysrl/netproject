@@ -8,15 +8,37 @@
         &nbsp <b> Net</b>Project
 </a>
 
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
-    </li>
-  </ul>
+<!-- Right Side Of Navbar -->
+ <!-- Authentication Links -->
+ @guest
+ <div class="px-3">
+ <a class="btn btn-success btn-sm " href="{{ route('login') }}" role="button" id="dropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+        {{ __('Login') }}
+
+ </a>
+</div>
+ @else
+ <div class="dropdown show px-3">
+        <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     {{ Auth::user()->name }}
+        </a>
+
+ <div class="dropdown-menu px-3" aria-labelledby="dropdownMenuLink">
+   <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+   document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+</div>
+ </div>
+@endif
 </nav>
 
-@include('partials.sidebar')
- @yield('content')
+@auth
+    @include('partials.sidebar')
+@endauth
+    @yield('content')
 
 
     </main>
