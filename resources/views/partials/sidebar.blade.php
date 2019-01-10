@@ -2,11 +2,34 @@
         <div class="row">
           <nav class="col-md-2 d-none d-md-block bg-light sidebar">
 <!--   USER INFORMATION -->
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center  border-bottom" style="padding: 12px;">
-    <h1 class="h2"> {{ Auth::user()->name }}</h1>
-    <div class="btn-toolbar mb-2 mb-md-0">
-    </div>
-  </div>
+<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted" style="padding: 12px;">
+
+    <span data-feather="user" class="user-icon"></span>
+      <i class="username"> {{ Auth::user()->name }} </i>
+    <a class="d-flex align-items-center nav-link" data-toggle="collapse"  data-target="#users" href="#">
+        <span data-feather="settings"></span>
+      </a>
+    </h6>
+      <div id="users" class="collapse border-bottom">
+          <div class="">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="/dashboard">
+                    <span data-feather="user"></span>
+                    User profile
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contacts">
+                    <span data-feather="users"></span>
+                    Manage users
+                  </a>
+                </li>
+              </ul>
+              </div>
+            </div>
+
+
       
 
             <div class="sidebar-sticky">
@@ -80,6 +103,6 @@
                     Year-end sale
                   </a>
                 </li>
-              </ul> --}}
+              </ul>--}} 
             </div>
           </nav>
