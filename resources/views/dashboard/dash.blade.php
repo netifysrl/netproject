@@ -7,7 +7,56 @@
           </div>
         </div>
 
-    </div>
+        {{-- Start Dashboard --}}
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="dash-box dash-box-color-1">
+                 {{-- <div class="dash-box-icon">
+                  </div>--}}
+                  <div class="dash-box-body">
+                    <span class="dash-box-count">{{$tot_projects}}</span>
+                    <span class="dash-box-title">Total projects</span>
+                  </div>
+                  
+                 {{--<div class="dash-box-action">
+                    <button>More Info</button>
+                  </div>--}}				
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="dash-box dash-box-color-2">
+                  {{--<div class="dash-box-icon">
+                  </div>--}}
+                  <div class="dash-box-body">
+                    <span class="dash-box-count">{{$open_projects}}</span>
+                    <span class="dash-box-title">Open projects</span>
+                  </div>
+                  
+                  {{--<div class="dash-box-action">
+                    <button>More Info</button>
+                  </div>--}}				
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="dash-box dash-box-color-3">
+                  {{--<div class="dash-box-icon">
+                  </div>--}}
+                  <div class="dash-box-body">
+                    <span class="dash-box-count">{{$close_projects}}</span>
+                    <span class="dash-box-title">Close projects</span>
+                  </div>
+                  
+                  {{--<div class="dash-box-action">
+                    <button>More Info</button>
+                  </div>--}}				
+                </div>
+              </div>
+            </div>
+          </div>
+
+
 
 
 {{-- <canvas class="my-4 w-100" id="chart-area" width="900" height="380"></canvas> --}}

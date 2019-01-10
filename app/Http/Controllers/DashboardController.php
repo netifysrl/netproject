@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Task;
 use App\Ticket;
+use App\Status;
 
 class DashboardController extends Controller
 {
@@ -25,8 +26,9 @@ class DashboardController extends Controller
     {
         $tot_projects = Project::count();
         $open_projects = Project::where('status_id', '1')->count();
+        $close_projects = Project::where('status_id', '2')->count();
 
 
-        return view('dashboard.dash', compact('tot_projects', 'open_projects'));
+        return view('dashboard.dash', compact('tot_projects', 'open_projects', 'close_projects'));
     }
 }

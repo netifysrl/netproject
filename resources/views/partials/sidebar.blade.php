@@ -2,6 +2,12 @@
         <div class="row">
           <nav class="col-md-2 d-none d-md-block bg-light sidebar">
 <!--   USER INFORMATION -->
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center  border-bottom" style="padding: 12px;">
+    <h1 class="h2"> {{ Auth::user()->name }}</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+    </div>
+  </div>
+      
 
             <div class="sidebar-sticky">
               <ul class="nav flex-column">
