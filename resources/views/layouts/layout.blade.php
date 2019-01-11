@@ -18,14 +18,14 @@
  </a>
 </div>
  @else
- <div class="dropdown show px-3">
+ <div class="dropleft  px-3">
         <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      {{ Auth::user()->name }}
         </a>
 
- <div class="dropdown-menu px-3" aria-labelledby="dropdownMenuLink">
+ <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
    <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
-   document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+   document.getElementById('logout-form').submit();"> <span data-feather="log-out" class="logout-icon"></span></a>
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf

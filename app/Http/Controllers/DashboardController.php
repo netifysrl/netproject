@@ -7,6 +7,8 @@ use App\Project;
 use App\Task;
 use App\Ticket;
 use App\Status;
+use App\Deal;
+
 
 class DashboardController extends Controller
 {
@@ -27,8 +29,12 @@ class DashboardController extends Controller
         $tot_projects = Project::count();
         $open_projects = Project::where('status_id', '1')->count();
         $close_projects = Project::where('status_id', '2')->count();
+        $open_deals = Deal::where('status_id', '1')->count();
+        $idle_deals = Deal::where('status_id', '4')->count();
+        $close_deals = Deal::where('status_id', '2')->count();
+        //$statuses = Status::all();
+        //dd($statuses);
 
-
-        return view('dashboard.dash', compact('tot_projects', 'open_projects', 'close_projects'));
+        return view('dashboard.dash', compact('tot_projects', 'open_projects', 'close_projects', 'open_deals', 'idle_deals', 'close_deals'));
     }
 }
