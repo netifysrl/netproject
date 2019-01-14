@@ -19,13 +19,15 @@
 </div>
  @else
  <div class="dropleft  px-3">
-        <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-outline-success btn-sm dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      {{ Auth::user()->name }}
         </a>
 
- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+ <div class="dropdown-menu userdiv" aria-labelledby="dropdownMenuLink">
    <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
-   document.getElementById('logout-form').submit();"> <span data-feather="log-out" class="logout-icon"></span></a>
+   document.getElementById('logout-form').submit();">
+  <img src="images/icons/feather/log-out.svg">
+  </a>
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
